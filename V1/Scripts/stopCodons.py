@@ -5,9 +5,9 @@ def main():
     rows = []
     DATA_BLANK_CHAR = "."
     STOP_CODON_CHAR = "-"
-    CSV_IN = "Work\\Outputs\\records_0_24135.csv"
-    CSV_OUT = "Work\\Outputs\\records_w_stop.csv"
-    CSV_OUT_FULL = "Work\\Outputs\\records_full_w_stop.csv"
+    CSV_IN = "..\\Outputs\\records_1_111.csv"
+    CSV_OUT = "..\\Outputs\\records_w_stop.csv"
+    CSV_OUT_FULL = "..\\Outputs\\records_full_w_stop.csv"
     full_rows = []
 
     # read all records
