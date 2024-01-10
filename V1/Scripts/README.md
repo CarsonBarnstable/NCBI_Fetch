@@ -14,7 +14,7 @@
   - ORF Sequence (bare sequence of DNA bases that make up the ORF sequence)
 
 ## detailParse.py
-#### Given an Output File from the `httpPost.py` Script, Checks all Sequences to Sequences are Properly Counted (STOP codon always included but not counted), and that Lengths of ORF Sequence and Amino Acid sequence align<br>Has option to take note of, then output a separate CSV file including ONLY Full Rows (entries with no non-available absent data)
+#### Given an Output File from the [`httpPost.py`](#httppostpy) Script, Checks all Sequences to Sequences are Properly Counted (STOP codon always included but not counted), and that Lengths of ORF Sequence and Amino Acid sequence align<br>Has option to take note of, then output a separate CSV file including ONLY Full Rows (entries with no non-available absent data)
 - Includes Printouts to ensure data is valid:
   - Number of Lengths Calculated should be same as Number of Sequences Saved
   - ORFs all End with one of {`TAA` / `TAG` / `TGA`} aka STOP Codon, or be blank (typically indicated with `.`)
