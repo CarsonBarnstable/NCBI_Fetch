@@ -14,18 +14,18 @@ def main(sp=None, n=None, i=None):
         i (int, optional): Save interval. Defaults to None.
     """
     # controller variables
-    START_POS = 1 if not sp else sp     # row in input file to start with
-    NUM_TODO = 10 if not n else n       # number of rows in input file to go through
-    SAVE_INT = 200 if not i else i      # save interval (for larger datasets) - always saves all
+    START_POS = 1 if not sp else sp     # row in input file to start with (1-indexed)
+    NUM_TODO = 111 if not n else n     # number of rows in input file to go through
+    SAVE_INT = 20 if not i else i      # save interval (for larger datasets) - always saves all
     
     PROGRESS_WIDTH = 100                # progress bar width
     PROGRESS_CHAR = "|"
     DATA_BLANK_CHAR = "."
 
-    CSV_IN_FROM = "Work\\Sources\\UCSC_ID_to_NCBI_ID_and_Beyond.csv"
+    CSV_IN_FROM = "..\\Data\\UCSC_ID_to_NCBI_ID_and_Beyond.csv"
     CSV_IN_HEADS = ["ucsc_id", "ncbi_id", "common_name", "rpkm"]
     NCBI_ID_INDEX = 1       # NCBI ID index in input file (0-indexed)
-    CSV_SAVE_TO = "Work\\Outputs\\records_" + str(START_POS) + "_" + str(NUM_TODO+START_POS) + ".csv"
+    CSV_SAVE_TO = "..\\Outputs\\records_" + str(START_POS) + "_" + str(NUM_TODO+START_POS-1) + ".csv"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -42,7 +42,7 @@ def main(sp=None, n=None, i=None):
     create_output_file_w_headers(headers, CSV_SAVE_TO)
     
     # going through all intput file rows (by index)
-    for i in range(START_POS, START_POS+NUM_TODO):
+    for i in range(START_POS, START_POS+NUM_TODO-1):
         try:
             # gather data for processing
             input_row = ids_and_info[i]                     # for easy/quick access
@@ -72,6 +72,7 @@ def main(sp=None, n=None, i=None):
         # saving if needed
         if records and not i%SAVE_INT:
             write_records_to_output_file(records, headers, CSV_SAVE_TO)
+            records = []  # reset "save buffer"
 
     # finishing progress bar after all complete
     progress_pos = draw_progress_bar(PROGRESS_WIDTH, PROGRESS_CHAR, START_POS, NUM_TODO, -1)
@@ -179,7 +180,6 @@ def write_records_to_output_file(records, headers, CSV_OUT):
     with open(CSV_OUT, 'a', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=headers)
         writer.writerows(records)
-    records = []
 
 def draw_progress_bar(PROGRESS_WIDTH, PROGRESS_CHAR, START_POS, NUM_TODO, index, progression=0):
     """
