@@ -6,10 +6,10 @@ def main():
 
     rows = []
     hg19_names = set()
-    CSV_OUT = "Work\\Outputs\\gene_distribution.csv"
+    CSV_OUT = "..\\Outputs\\gene_distribution.csv"
 
     # read all records
-    with open('Work\\Sources\\output_hg19_ncbi.csv', 'r') as f:
+    with open('..\\Data\\output_hg19_ncbi.csv', 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
             rows.append(row)
@@ -21,7 +21,7 @@ def main():
     rows = []
     cb_names = set()
     # read all different records
-    with open('Work\\Sources\\UCSC_ID_to_NCBI_ID_and_Beyond.csv', 'r') as f:
+    with open('..\\Data\\UCSC_ID_to_NCBI_ID_and_Beyond.csv', 'r') as f:
         reader = csv.reader(f)
         for row in reader:
             rows.append(row)
