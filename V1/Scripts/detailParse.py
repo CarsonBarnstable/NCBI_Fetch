@@ -6,8 +6,8 @@ def main():
 
     rows = []
     DATA_BLANK_CHAR = "."
-    RECORDS = "Work\\Sources\\records_0_24135.csv"
-    CSV_OUT = "Work\\Outputs\\records_full_only.csv"
+    RECORDS = "..\\Data\\records_0_1000.csv"
+    CSV_OUT = "..\\Outputs\\records_full_only.csv"
     DO_CSV_OUT = False
 
     # read all records
