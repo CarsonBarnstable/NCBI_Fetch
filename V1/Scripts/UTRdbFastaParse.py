@@ -5,8 +5,8 @@ def main():
     rows = {}
     full_rows = {}
     START_CHAR = ">"
-    FASTA_IN = "Work\\Sources\\UTRdb_raw_file.fasta"
-    CSV_OUT = "Work\\Outputs\\UTRdb_raw_csv.csv"
+    FASTA_IN = "..\\Data\\UTRdb_raw_file.fasta"
+    CSV_OUT = "..\\Outputs\\UTRdb_raw_csv.csv"
 
     # setup
     headers = ["ensembl_id", "common_name", "fp_len", "tp_len", "five_prime", "three_prime"]
