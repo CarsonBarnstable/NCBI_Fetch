@@ -6,9 +6,9 @@ def main():
 
     rows = []
     DATA_BLANK_CHAR = "."
-    RECORDS = "..\\Data\\records_0_1000.csv"
-    CSV_OUT = "..\\Outputs\\records_full_only.csv"
-    DO_CSV_OUT = False
+    RECORDS = "..\\Outputs\\records_1_111.csv"
+    CSV_OUT = "..\\Outputs\\records_full_only_1_111.csv"
+    DO_CSV_OUT = True
 
     # read all records
     with open(RECORDS, 'r') as f:
@@ -49,8 +49,10 @@ def main():
             full_rows.append(row)
     
     # to double check counts
-    print(counts)
-    print(sequences)
+    print()
+    print("Num of Length Counts:", counts)
+    print("Num of Sequences:    ", sequences)
+    print("Note: Nums should match ^^\n")
 
     if DO_CSV_OUT:
         # make file
@@ -67,8 +69,9 @@ def main():
     last_three = set()
     for row in rows:
         last_three.add(row["orf_sequence"][-3:])
-    # ensuring all orf sequences end with STOP codon {UAA | UAG | UGA}
-    print(last_three)
+    # ensuring all orf sequences end with STOP codon {TAA | TAG | TGA}
+    print("All ORF Sequence Endings:", last_three)
+    print("Note: should be STOP { TAA / TAG / TGA }, or", DATA_BLANK_CHAR, "(blank)\n")
 
     # and AA length calculations
     length_diff = set()
@@ -76,7 +79,8 @@ def main():
         if row["aa_len"] != DATA_BLANK_CHAR:
             length_diff.add(int(row["orf_len"]) - int(row["aa_len"])*3)
     # predicted vs actual length between ORF and AA (likely 3)
-    print(length_diff)
+    print("Different differences in lengths between ORF and AA (tripled)", length_diff)
+    print("Note: should only ever be 3 (from missing STOP Amino Acid)\n")
 
 if __name__=="__main__":
     main()
