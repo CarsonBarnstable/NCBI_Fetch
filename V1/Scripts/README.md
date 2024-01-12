@@ -27,26 +27,27 @@
 - Second input file comes from the [`httpPost.py`](#httppostpy) Script (optionally adjusted by [`detailParse.py`](#detailparsepy))
 - Output will combine tww files, aligned on the NCBI ID columns (only for entries in BOTH files)
 
-### UTRdbFastaParse.py
-##### Parses the raw FASTA file from the UTRdb Download, saving it into a CSV for faster/easier Python Parsing and Expanding
+# <br>Smaller Helper Scripts Used:
+
+## UTRdbFastaParse.py
+#### Parses the raw FASTA file from the UTRdb Download, saving it into a CSV for faster/easier Python Parsing and Expanding
 - Extracts the Five Prime and Three Prime data from raw UTRdb FASTA file
 - Determines lengths of each UTR to save alongside information (for easier future filtering)
 - Saves all FASTA File information (alongside sequence length information) into CSV for future usage
 
-# <br>Smaller Helper Scripts Used:
-### UTRdbNCBINaming.py
-##### Given the Stock UTRdb CSV (from [`UTRdbFastaParse.py`](#utrdbfastaparsepy) -- indexed on Ensembl IDs by defaut), along with a pairwise translation table from Ensembl IDs to NCBI IDs, adds the NCBI ID key to each row where able
+## UTRdbNCBINaming.py
+#### Given the Stock UTRdb CSV (from [`UTRdbFastaParse.py`](#utrdbfastaparsepy) -- indexed on Ensembl IDs by defaut), along with a pairwise translation table from Ensembl IDs to NCBI IDs, adds the NCBI ID key to each row where able
 - Ensembl ID to NCBI ID translation table from both bioDBnet's [db2bd tool](https://biodbnet-abcc.ncifcrf.gov/db/db2db.php) and the HUGO Gene Nomenclature Committee's [Custom Downloader](https://www.genenames.org/download/custom/)
 - Only adds information to UTRdb data, but strips out any rows that do not have Ensembl/NCBI names (not usable along with [`httpPost.py`](#httppostpy) results)
 
-### dataSetDifference.py
-##### Details
+## dataSetDifference.py
+#### Details
 - 1
 - 2
 - 3
 
-### stopCodons.py
-##### Details
+## stopCodons.py
+#### Details
 - 1
 - 2
 - 3
