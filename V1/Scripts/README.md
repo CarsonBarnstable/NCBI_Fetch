@@ -1,6 +1,6 @@
 # Script Explanations:
 ## httpPost.py
-#### Utilizes the [NCBI's Entrez Database](https://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch), to gather a collection of Nucleotide sequence details (given a list of NCBI IDs for Identification)
+#### Utilizes the [NCBI's Entrez Database](https://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch), to gather a collection of Nucleotide sequence details (given a list of NCBI IDs for Identification<br>Note: Can also combine known/existing data with the entries queried/retrieved in the resulting output file
 - Only requires CSV of NCBI IDs (e.g. [NM_005101](https://www.ncbi.nlm.nih.gov/nuccore/NM_005101)), though can combine additional data linked with given NCBI IDs while generating output file.
   - Allows Customization of which interval of IDs to process ( start pos / number to process )
   - Extracts all needed info from the XML Result, saving directly from the NCBI Database
@@ -14,7 +14,7 @@
   - ORF Sequence (bare sequence of DNA bases that make up the ORF sequence)
 
 ## detailParse.py
-#### Given an Output File from the [`httpPost.py`](#httppostpy) Script, checks that all sequences are properly counted & structured (STOP codon always included but not counted), and that Lengths of ORF Sequence and Amino Acid sequence align<br>Has option to take note of, then output a separate CSV file including ONLY Full Rows (entries with no non-available absent data)
+#### Given an Output File from the [`httpPost.py`](#httppostpy) Script, checks that all sequences are properly counted & structured (STOP codon always included but not counted), and that Lengths of ORF Sequence and Amino Acid sequence align<br>Note: Has option to take note of, then output a separate CSV file including ONLY Full Rows (entries with no non-available absent data)
 - Includes Printouts to ensure data is valid:
   - Number of Lengths Calculated should be same as Number of Sequences Saved
   - ORFs all End with one of {`TAA` / `TAG` / `TGA`} aka STOP Codon, or be blank (typically indicated with `.`)
