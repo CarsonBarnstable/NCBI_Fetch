@@ -46,7 +46,6 @@
 - Second file includes pairings of UCSC IDs and NCBI IDs, as well as the Genome's Name & RPKM (Reads per Kilo Base per Million Mapped Reads) - to be used later
 
 ## stopCodons.py
-#### Details
-- 1
-- 2
-- 3
+#### Reads in a File containing Genome Sequence information, and creates new file including STOP codon symbol (typically `-`) in sequence<br>Can also optionally create parallel output file that only contains "Full" data rows
+- Note: only adds STOP codon symbols where expected (does not append symbol to cells without any sequence information)
+- Increments Amino Acid Translation Length counter as well, so that "counted length" of Sequence still aligns with "recorded length"
