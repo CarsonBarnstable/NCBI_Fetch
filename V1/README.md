@@ -24,6 +24,7 @@ The main goal of this was to not only create the ability to fetch Nucleotide Seq
   - **ORF Sequence** - Nucleotide that exists within the CDS region of the Genome
   - **Nucleotide Sequence** - Entire Nucleotide Sequence, that includes the CDS Region, its 5'/3' UTRs, as well as Inrtons (non-expressed or non-operative sequences)
   - **Five Prime / Three Prime UTRs** - Sequences before/after the CDS Region, that control critical pre- and post- transcriptional gene regulation processes,  that impact gene expression, transcription, translation, and even gene stability
+#### *The Lengths of All Five Sequences was also Stored Alongside the Sequences, for Faster/Easier Filtering/Sorting in the Future*
 ## How the Data was Collected:
 - Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat
 - Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
