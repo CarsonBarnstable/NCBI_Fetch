@@ -5,9 +5,9 @@ def main():
     rows = []
     full_rows = []
     ensembl_to_ncbi = {}
-    CSV_IN = "..\\Outputs\\UTRdb_raw_csv.csv"
+    CSV_IN = "..\\Data\\UTRdb_raw_csv.csv"
     DICT_IN = "..\\Data\\Ensembl_to_NCBI_Transcript.csv"
-    CSV_OUT = "..\\Outputs\\UTRdb_raw_csv_w_ncbi.csv"
+    CSV_OUT = "..\\Data\\UTRdb_raw_csv_w_ncbi.csv"
 
     # read all records
     with open(CSV_IN, 'r') as f:
