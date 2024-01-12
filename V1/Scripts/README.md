@@ -1,4 +1,4 @@
-# Script Explanations:
+# Main Script Explanations:
 ## httpPost.py
 #### Utilizes the [NCBI's Entrez Database](https://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch), to gather a collection of Nucleotide sequence details (given a list of NCBI IDs for Identification<br>Note: Can also combine known/existing data with the entries queried/retrieved in the resulting output file
 - Only requires CSV of NCBI IDs (e.g. [NM_005101](https://www.ncbi.nlm.nih.gov/nuccore/NM_005101)), though can combine additional data linked with given NCBI IDs while generating output file.
@@ -33,7 +33,7 @@
 - Determines lengths of each UTR to save alongside information (for easier future filtering)
 - Saves all FASTA File information (alongside sequence length information) into CSV for future usage
 
-## Smaller Helper Scripts Used:
+# <br>Smaller Helper Scripts Used:
 ### UTRdbNCBINaming.py
 ##### Given the Stock UTRdb CSV (from [`UTRdbFastaParse.py`](#utrdbfastaparsepy) -- indexed on Ensembl IDs by defaut), along with a pairwise translation table from Ensembl IDs to NCBI IDs, adds the NCBI ID key to each row where able
 - Ensembl ID to NCBI ID translation table from both bioDBnet's [db2bd tool](https://biodbnet-abcc.ncifcrf.gov/db/db2db.php) and the HUGO Gene Nomenclature Committee's [Custom Downloader](https://www.genenames.org/download/custom/)
