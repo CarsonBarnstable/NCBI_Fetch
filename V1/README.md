@@ -1,4 +1,4 @@
-# V1
+# V1 Details
 ### Script Explanations Available in the [Scripts README](./Scripts/.)
 ## Notes:
 - This version was developed as-needed for on-demand file processing (and therefore is not as modular, flexible, or clean as I would prefer)
