@@ -8,7 +8,7 @@ def main():
     utr_rows = []
     cds_rows = []
     full_rows = []
-    CSV_UTR_IN = "..\\Outputs\\UTRdb_raw_csv_w_ncbi.csv"
+    CSV_UTR_IN = "..\\Data\\UTRdb_raw_csv_w_ncbi.csv"
     CSV_CDS_IN = "..\\Outputs\\records_full_w_stop.csv"
     CSV_OUT = "..\\Outputs\\paired_UTRdb_CDS_full_only.csv"
 
