@@ -28,10 +28,10 @@
 - Output will combine tww files, aligned on the NCBI ID columns (only for entries in BOTH files)
 
 ### UTRdbFastaParse.py
-##### Details
-- 1
-- 2
-- 3
+##### Parses the raw FASTA file from the UTRdb Download, saving it into a CSV for faster/easier Python Parsing and Expanding
+- Extracts the Five Prime and Three Prime data from raw UTRdb FASTA file
+- Determines lengths of each UTR to save alongside information (for easier future filtering)
+- Saves all FASTA File information (alongside sequence length information) into CSV for future usage
 
 ## Smaller Helper Scripts Used:
 ### UTRdbNCBINaming.py
