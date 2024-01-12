@@ -23,30 +23,30 @@
 
 ## pairingUTRdbCDS.py
 #### Combines two data files (one generated, one found as a resource), pairing information from files on the pairing of NCBI IDs<br>Only keeps data entries that have a matching NCBI ID in both files, so resulting output file will only be those that have "complete full information"
-- First input file contains details about a Nucleotide's Five Prime and Three Prime (3' and 5') UTRs, or UnTranslated Regions (that surround the CDS Region) - From the Publicly Accessible [UTRdb 2.0](https://pubmed.ncbi.nlm.nih.gov/36399486/)
+- First input file contains details about a Nucleotide's Five Prime and Three Prime (3' and 5') UTRs, or UnTranslated Regions (that surround the CDS Region) - From the Publicly Accessible [UTRdb 2.0](https://pubmed.ncbi.nlm.nih.gov/36399486/) and adjusted by [`UTRdbFastaParse.py`](#utrdbfastaparsepy) and [`UTRdbNCBINaming.py`](#utrdbncbinamingpy)
 - Second input file comes from the [`httpPost.py`](#httppostpy) Script (optionally adjusted by [`detailParse.py`](#detailparsepy))
 - Output will combine tww files, aligned on the NCBI ID columns (only for entries in BOTH files)
 
-## UTRdbNCBINaming.py
-#### Details
+### UTRdbFastaParse.py
+##### Details
 - 1
 - 2
 - 3
 
-## UTRdbFastaParse.py
-#### Details
+## Smaller Helper Scripts Used:
+### UTRdbNCBINaming.py
+##### Given the Stock UTRdb CSV (from [`UTRdbFastaParse.py`](#utrdbfastaparsepy) -- indexed on Ensembl IDs by defaut), along with a pairwise translation table from Ensembl IDs to NCBI IDs, adds the NCBI ID key to each row where able
+- Ensembl ID to NCBI ID translation table from both bioDBnet's [db2bd tool](https://biodbnet-abcc.ncifcrf.gov/db/db2db.php) and the HUGO Gene Nomenclature Committee's [Custom Downloader](https://www.genenames.org/download/custom/)
+- Only adds information to UTRdb data, but strips out any rows that do not have Ensembl/NCBI names (not usable along with [`httpPost.py`](#httppostpy) results)
+
+### dataSetDifference.py
+##### Details
 - 1
 - 2
 - 3
 
-## dataSetDifference.py
-#### Details
-- 1
-- 2
-- 3
-
-## stopCodons.py
-#### Details
+### stopCodons.py
+##### Details
 - 1
 - 2
 - 3
