@@ -41,10 +41,9 @@
 - Only adds information to UTRdb data, but strips out any rows that do not have Ensembl/NCBI names (not usable along with [`httpPost.py`](#httppostpy) results)
 
 ## dataSetDifference.py
-#### Details
-- 1
-- 2
-- 3
+#### Used as a Logic/Sanity Checker, and to determine how useful it would be to combine datasets.<br>Counts the prevelance of Genomes between two datasets, records whether a Gene is in Both Datasets, or just one of the two.
+- First Dataset queried was the hg19 dataset (Human Genome version 19), from the NCBI's [Genome Assembly GRCh37](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.13/) and [UCSC's Genome Browser on Human GRCh37/hg19](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr7%3A155592223%2D155605565&hgsid=1868361926_ZDCRFUMwLBhlNZ8oPOhbzJXDHwn4)
+- Second file includes pairings of UCSC IDs and NCBI IDs, as well as the Genome's Name & RPKM (Reads per Kilo Base per Million Mapped Reads) - to be used later
 
 ## stopCodons.py
 #### Details
