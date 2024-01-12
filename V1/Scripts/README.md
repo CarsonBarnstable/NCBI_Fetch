@@ -14,7 +14,7 @@
   - ORF Sequence (bare sequence of DNA bases that make up the ORF sequence)
 
 ## detailParse.py
-#### Given an Output File from the [`httpPost.py`](#httppostpy) Script, Checks all Sequences to Sequences are Properly Counted (STOP codon always included but not counted), and that Lengths of ORF Sequence and Amino Acid sequence align<br>Has option to take note of, then output a separate CSV file including ONLY Full Rows (entries with no non-available absent data)
+#### Given an Output File from the [`httpPost.py`](#httppostpy) Script, checks that all sequences are properly counted & structured (STOP codon always included but not counted), and that Lengths of ORF Sequence and Amino Acid sequence align<br>Has option to take note of, then output a separate CSV file including ONLY Full Rows (entries with no non-available absent data)
 - Includes Printouts to ensure data is valid:
   - Number of Lengths Calculated should be same as Number of Sequences Saved
   - ORFs all End with one of {`TAA` / `TAG` / `TGA`} aka STOP Codon, or be blank (typically indicated with `.`)
@@ -22,10 +22,10 @@
 - Optionally, will output file that matches input file, but with only rows that have all data available (no blank cells)
 
 ## pairingUTRdbCDS.py
-#### Details
-- 1
-- 2
-- 3
+#### Combines two data files (one generated, one found as a resource), pairing information from files on the pairing of NCBI IDs<br>Only keeps data entries that have a matching NCBI ID in both files, so resulting output file will only be those that have "complete full information"
+- First input file contains details about a Nucleotide's Five Prime and Three Prime (3' and 5') UTRs, or UnTranslated Regions (that surround the CDS Region) - From the Publicly Accessible [UTRdb 2.0](https://pubmed.ncbi.nlm.nih.gov/36399486/)
+- Second input file comes from the [`httpPost.py`](#httppostpy) Script (optionally adjusted by [`detailParse.py`](#detailparsepy))
+- Output will combine tww files, aligned on the NCBI ID columns (only for entries in BOTH files)
 
 ## UTRdbNCBINaming.py
 #### Details
