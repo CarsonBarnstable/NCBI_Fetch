@@ -25,7 +25,7 @@
 #### Combines two data files (one generated, one found as a resource), pairing information from files on the pairing of NCBI IDs<br>Only keeps data entries that have a matching NCBI ID in both files, so resulting output file will only be those that have "complete full information"
 - First input file contains details about a Nucleotide's Five Prime and Three Prime (3' and 5') UTRs, or UnTranslated Regions (that surround the CDS Region) - From the Publicly Accessible [UTRdb 2.0](https://pubmed.ncbi.nlm.nih.gov/36399486/) and adjusted by [`UTRdbFastaParse.py`](#utrdbfastaparsepy) and [`UTRdbNCBINaming.py`](#utrdbncbinamingpy)
 - Second input file comes from the [`httpPost.py`](#httppostpy) Script (optionally adjusted by [`detailParse.py`](#detailparsepy))
-- Output will combine tww files, aligned on the NCBI ID columns (only for entries in BOTH files)
+- Output combines the two files, aligned on the NCBI ID columns (only for entries in BOTH files)
 
 # <br>Smaller Helper Scripts Used:
 
