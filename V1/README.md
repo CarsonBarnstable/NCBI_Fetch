@@ -27,7 +27,7 @@ The main goal of this was to not only create the ability to fetch Nucleotide Seq
 ### *The Lengths of All Five Sequences was also Stored Alongside the Sequences, for Faster/Easier Filtering/Sorting in the Future*
 ## How the Data was Collected:
 #### 1) Getting Reference Sequences with RPKM Data
-- Started with Table of Gene RPKM (along with Gene Name) - From Paper: [A multi-omics dataset of human transcriptome and proteome stable reference](https://www.nature.com/articles/s41597-023-02359-w#Sec18) (Paper Data [Findable Here](https://identifiers.org/geo/GSE234201))
+- Started with Table of Gene RPKM (along with Gene Name) - From Paper: [A multi-omics dataset of human transcriptome and proteome stable reference](https://www.nature.com/articles/s41597-023-02359-w) (Paper Data [Findable Here](https://identifiers.org/geo/GSE234201))
 - Paired up Gene Names with Ensembl ID and NCBI ID, from Custom Download from the HUGO Gene Nomenclature Committee's [Custom Downloader](https://www.genenames.org/download/custom/)
 - Used [`httpPost.py`](./Scripts/httpPost.py) to gather a collection of Nucleotide sequence details through the [NCBI's Entrez Database](https://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch), retrieving:
   - Entire gene nucleotide sequence
