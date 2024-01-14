@@ -20,7 +20,7 @@ The main goal of this was to not only create the ability to fetch Nucleotide Seq
     - Mostly standardized by the [HUGO Gene Nomenclature Committee](https://www.genenames.org/)
   - **RPKM _(Reads per Kilobase of Transcript per Million Reads Mapped)_** - Used to compare/judge transcript levels (gene expression) between different genes 
   - **CDS Region Start/Stop Pos** - Start and Stop positions of the Gene's Coding Sequence, for finding translated regions within entire nucleotide sequence
-  - **Amino Acid Translation** - Amino Acid translation (from A/G/C/T triplets to Amino Acids) that form the entire protien encoded (including STOP symbols)
+  - **Amino Acid Translation** - Amino Acid translation (from A/G/C/T triplets to Amino Acids) that form the entire protein encoded (including STOP symbols)
   - **ORF Sequence** - Nucleotide that exists within the CDS region of the Genome
   - **Nucleotide Sequence** - Entire Nucleotide Sequence, that includes the CDS Region, its 5'/3' UTRs, as well as Inrtons (non-expressed or non-operative sequences)
   - **Five Prime / Three Prime UTRs** - Sequences before/after the CDS Region, that control critical pre- and post- transcriptional gene regulation processes,  that impact gene expression, transcription, translation, and even gene stability
@@ -31,7 +31,7 @@ The main goal of this was to not only create the ability to fetch Nucleotide Seq
 - Paired up Gene Names with Ensembl ID and NCBI ID, from Custom Download from the HUGO Gene Nomenclature Committee's [Custom Downloader](https://www.genenames.org/download/custom/)
 - Used [`httpPost.py`](./Scripts/httpPost.py) to gather a collection of Nucleotide sequence details through the [NCBI's Entrez Database](https://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch), retrieving:
   - Entire gene nucleotide sequence
-  - ORF region sequence (CDS) and start/end pos within nucleotide sequence
+  - ORF region sequence (CDS) and start/end position within nucleotide sequence
   - Amino acid translation of ORF region
   - Lengths of all sequences above
 - Used [`stopCodons.py`](./Scripts/stopCodons.py) to add STOP codons to sequence details, and to update the appropriate sequence lengths\
@@ -42,7 +42,7 @@ The main goal of this was to not only create the ability to fetch Nucleotide Seq
   - Used [`UTRdbNCBINaming.py`](./Scripts/UTRdbNCBINaming.py) to add NCBI Index details to UTR Data (which was previously only indexed by Ensembl ID)
 #### 3) Combining the NCBI Reference Sequences (and RPKM) w/ the UTRdb Data
 - Started with two Data CSVs, containing the following info:
-  - **FROM [PART 1](#1-getting-reference-sequences-with-rpkm-data):**    UCSC ID | NCBI ID | Common Name | RPKM | CDS Start/Stop Posiitons | Amino Acid Sequence Length | ORF Regino Length | Nucleotide Seuqnce Length | Amino Acid Tanslation ORF Sequence | Nucleotide Sequence
+  - **FROM [PART 1](#1-getting-reference-sequences-with-rpkm-data):**    UCSC ID | NCBI ID | Common Name | RPKM | CDS Start/Stop Posiitons | Amino Acid Sequence Length | ORF Region Length | Nucleotide Seuqnce Length | Amino Acid Tanslation | ORF Sequence | Nucleotide Sequence
   - **FROM [PART 2](#2-getting-53-utr-sequences):**    NCBI ID | Ensembl ID | Common Name | 5' Length | 3' Length | Five Prime Sequence | Three Prime Sequence
 - From all records, found pairings where NCBI ID match (and double checking with Common Name), to pair up data [using [`pairingUTRdbCDS.py`](./Scripts/pairingUTRdbCDS.py)
   - Created resultant data file with ALL of the above data (indexed by UCSC/NCBI/Ensembl IDs)
